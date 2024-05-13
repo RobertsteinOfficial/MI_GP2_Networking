@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class MyNetworkPlayer : NetworkBehaviour
 {
@@ -60,6 +59,7 @@ public class MyNetworkPlayer : NetworkBehaviour
         CmdSetDisplayName("My New Name");
     }
 
+    
     [ClientRpc]
     private void RpcLogNewName(string newDisplayName)
     {

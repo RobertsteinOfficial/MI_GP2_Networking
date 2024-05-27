@@ -18,6 +18,15 @@ public class UnitMovement : NetworkBehaviour
         agent.SetDestination(hit.position);
     }
 
+    [ServerCallback]
+    private void Update()
+    {
+        if (!agent.hasPath) return;
+        if(agent.remainingDistance > agent.stoppingDistance) return;
+
+        agent.ResetPath();
+    }
+
     #endregion
 
     #region Client

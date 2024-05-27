@@ -1,6 +1,8 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,9 +17,15 @@ public class UnitSelectionHandler : MonoBehaviour
     private Vector2 startPosition;
     private RTSPlayer player;
 
-    private void Start()
+    private void OnEnable()
     {
-        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
+        Unit.AuthorityOnUnitDespawned += AuthorityHandleUnitDespawned;
+    }
+
+
+    private void OnDisable()
+    {
+        Unit.AuthorityOnUnitDespawned -= AuthorityHandleUnitDespawned;
     }
 
     private void Update()
@@ -116,4 +124,11 @@ public class UnitSelectionHandler : MonoBehaviour
         unitSelectionArea.sizeDelta = new Vector2(Mathf.Abs(areaWidth), Mathf.Abs(areaHeight));
         unitSelectionArea.anchoredPosition = startPosition + new Vector2(areaWidth / 2, areaHeight / 2);
     }
+
+    private void AuthorityHandleUnitDespawned(Unit unit)
+    {
+        selectedUnits.Remove(unit);
+    }
+
+
 }

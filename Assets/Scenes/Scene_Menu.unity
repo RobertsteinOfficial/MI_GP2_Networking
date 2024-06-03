@@ -271,17 +271,17 @@ PrefabInstance:
     - target: {fileID: 4240555125358972341, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.053298235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4240555125358972341, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09970975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4240555125358972341, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13613063
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4240555125358972341, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
@@ -330,19 +330,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
+      propertyPath: unitSpawnerPrefab
+      value: 
+      objectReference: {fileID: 4627962625067809149, guid: 01694e84adca643429087f9794e843f4,
+        type: 3}
+    - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
+      propertyPath: gameOverHandlerPrefab
+      value: 
+      objectReference: {fileID: 7870596538621757386, guid: 9e105554eb94f244d871eab43e366acf,
+        type: 3}
+    - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
       propertyPath: spawnPrefabs.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
+      propertyPath: spawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4627962625067809149, guid: 01694e84adca643429087f9794e843f4,
+        type: 3}
     - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
       propertyPath: spawnPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 329568510350927482, guid: 09e87ec70bf9dff4c94ae967d6a758e6,
         type: 3}
+    - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
+      propertyPath: spawnPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 5990724018848999918, guid: 9e105554eb94f244d871eab43e366acf,
+        type: 3}
+    - target: {fileID: 5435934585871147475, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
+      propertyPath: spawnPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 2225702973060089816, guid: 5ccfe511425b91246b55618075adff01,
+        type: 3}
     - target: {fileID: 7092057472613184298, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
         type: 3}
       propertyPath: m_Name
       value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092057472613184298, guid: 60b2669c6e3c30a4ca74d512b5457d9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

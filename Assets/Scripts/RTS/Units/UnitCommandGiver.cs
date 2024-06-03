@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,17 @@ public class UnitCommandGiver : MonoBehaviour
     [SerializeField] private UnitSelectionHandler unitSelectionHandler;
     [SerializeField] private LayerMask layerMask;
 
+    private void OnEnable()
+    {
+        GameOverHandler.ClientOnGameOver += ClientHandleGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameOverHandler.ClientOnGameOver -= ClientHandleGameOver;
+    }
+
+   
     private void Update()
     {
         if (!Mouse.current.rightButton.wasPressedThisFrame) return;
@@ -47,4 +59,10 @@ public class UnitCommandGiver : MonoBehaviour
             unit.Targeter.CmdSetTarget(newTarget.gameObject);
         }
     }
+
+    private void ClientHandleGameOver(string obj)
+    {
+        enabled = false;
+    }
+
 }

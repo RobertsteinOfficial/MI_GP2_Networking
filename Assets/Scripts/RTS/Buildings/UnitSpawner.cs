@@ -21,15 +21,15 @@ public class UnitSpawner : NetworkBehaviour, IPointerClickHandler
         NetworkServer.Spawn(unitInstance, connectionToClient);
     }
 
-    public override void OnStartServer()
-    {
-        health.ServerOnDie += ServerHandleDie;
-    }
+    //public override void OnStartServer()
+    //{
+    //    health.ServerOnDie += ServerHandleDie;
+    //}
 
-    public override void OnStopServer()
-    {
-        health.ServerOnDie -= ServerHandleDie;
-    }
+    //public override void OnStopServer()
+    //{
+    //    health.ServerOnDie -= ServerHandleDie;
+    //}
 
     private void ServerHandleDie()
     {

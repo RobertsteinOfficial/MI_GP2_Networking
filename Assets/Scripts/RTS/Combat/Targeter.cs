@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System;
+using Unity.VisualScripting;
 
 public class Targeter : NetworkBehaviour
 {
@@ -9,6 +11,17 @@ public class Targeter : NetworkBehaviour
     public Targetable Target { get { return target; } }
 
     #region Server
+
+    public override void OnStartServer()
+    {
+        GameOverHandler.ServerOnGameOver += ServerHandleGameOver;
+    }
+
+
+    public override void OnStopServer()
+    {
+        GameOverHandler.ServerOnGameOver -= ServerHandleGameOver;
+    }
 
     [Command]
     public void CmdSetTarget(GameObject targetGO)
@@ -23,6 +36,13 @@ public class Targeter : NetworkBehaviour
     {
         target = null;
     }
+
+    [Server]
+    private void ServerHandleGameOver()
+    {
+        ClearTarget();
+    }
+
 
     #endregion
 }

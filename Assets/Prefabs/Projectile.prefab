@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8397267452594588049}
   - component: {fileID: 6074122192143907297}
   - component: {fileID: 2404270370177318405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,6 +71,7 @@ MonoBehaviour:
   body: {fileID: 6074122192143907297}
   destroyAfterSeconds: 5
   bulletVelocity: 10
+  damageToDeal: 20
 --- !u!54 &6074122192143907297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_Name
       value: Shell
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_LocalPosition.x

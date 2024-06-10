@@ -7,6 +7,8 @@ using System;
 
 public class Unit : NetworkBehaviour
 {
+    [SerializeField] private int resourceCost = 10;
+    public int ResourceCost { get { return resourceCost; } }
     [SerializeField] UnitMovement unitMovement;
     public UnitMovement Movement { get { return unitMovement; } }
 

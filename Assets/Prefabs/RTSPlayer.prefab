@@ -67,3 +67,8 @@ MonoBehaviour:
   syncInterval: 0
   buildings:
   - {fileID: 7478203759495372207, guid: 5ccfe511425b91246b55618075adff01, type: 3}
+  - {fileID: 7478203759495372207, guid: b51620aa98decc24195ad305d785d5bc, type: 3}
+  buildingObstacleLayer:
+    serializedVersion: 2
+    m_Bits: 321
+  buildingRangeLimit: 5

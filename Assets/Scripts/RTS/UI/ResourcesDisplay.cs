@@ -10,18 +10,13 @@ public class ResourcesDisplay : MonoBehaviour
     [SerializeField] private TMP_Text resourcesText;
     private RTSPlayer player;
 
-    private void Update()
-    {
-        if (player == null)
-        {
-            player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
 
-            if(player != null)
-            {
-                player.ClientActionResourceUpdated += ClientHandleResourcesUpdated;
-            }
-        }
+    private void Start()
+    {
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
+        player.ClientActionResourceUpdated += ClientHandleResourcesUpdated;
     }
+
 
     private void OnDisable()
     {

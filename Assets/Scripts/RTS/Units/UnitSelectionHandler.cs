@@ -22,7 +22,7 @@ public class UnitSelectionHandler : MonoBehaviour
         GameOverHandler.ClientOnGameOver += ClientHandleGameOver;
     }
 
-    
+
 
     private void OnDisable()
     {
@@ -30,13 +30,13 @@ public class UnitSelectionHandler : MonoBehaviour
         GameOverHandler.ClientOnGameOver -= ClientHandleGameOver;
     }
 
+    private void Start()
+    {
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
+    }
+
     private void Update()
     {
-        if (player == null)
-        {
-            player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
-        }
-
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             StartSelectionArea();
